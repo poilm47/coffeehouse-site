@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import CoffeeGuide from "./pages/CoffeeGuide";
 import VideoTutorials from "./pages/VideoTutorials";
 import CoffeeGame from "./pages/CoffeeGame";
+import Menu from "./pages/Menu";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/coffee-guide" element={<CoffeeGuide />} />
           <Route path="/video-tutorials" element={<VideoTutorials />} />
           <Route path="/coffee-game" element={<CoffeeGame />} />
+          <Route path="/menu" element={<Menu />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

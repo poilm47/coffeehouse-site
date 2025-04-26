@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Coffee, Home, BookOpen, ChevronDown, Menu, X, Video, GamepadIcon } from "lucide-react";
+import { Coffee, Home, BookOpen, ChevronDown, Menu, X, Video, GamepadIcon, UtensilsCrossed } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -28,6 +28,7 @@ const NavBar = () => {
           <NavLink to="/" icon={<Home className="h-4 w-4" />} label="Главная" />
           <NavLink to="/coffee-guide" icon={<BookOpen className="h-4 w-4" />} label="О кофе" />
           <NavLink to="/video-tutorials" icon={<Video className="h-4 w-4" />} label="Видеоуроки" />
+          <NavLink to="/menu" icon={<UtensilsCrossed className="h-4 w-4" />} label="Напитки" />
           <NavLink to="/coffee-game" icon={<GamepadIcon className="h-4 w-4" />} label="Мини-игра" />
           <div className="relative group">
             <button className="flex items-center space-x-1 text-sm font-medium hover:text-primary transition-colors">
@@ -60,6 +61,7 @@ const NavBar = () => {
           <MobileNavLink to="/" label="Главная" />
           <MobileNavLink to="/coffee-guide" label="О кофе" />
           <MobileNavLink to="/video-tutorials" label="Видеоуроки" />
+          <MobileNavLink to="/menu" label="Напитки" />
           <MobileNavLink to="/coffee-game" label="Мини-игра" />
           <MobileNavLink to="/articles/brewing" label="Способы заваривания" />
           <MobileNavLink to="/articles/beans" label="Виды кофейных зерен" />
