@@ -73,6 +73,17 @@
   }
   body {
     @apply bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  html, #root {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
   }
 }
 

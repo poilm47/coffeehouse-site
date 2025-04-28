@@ -5,8 +5,8 @@ import { ArrowRight, CoffeeIcon } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden pt-24 pb-12 md:pt-32 md:pb-20">
-      <div className="container px-4 mx-auto">
+    <section className="relative overflow-hidden pt-24 pb-12 md:pt-32 md:pb-20 w-full">
+      <div className="container px-4 mx-auto w-full max-w-screen-xl">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/2 space-y-6 animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">

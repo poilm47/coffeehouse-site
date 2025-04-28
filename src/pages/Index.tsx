@@ -7,15 +7,15 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <>
+    <div className="w-full">
       <NavBar />
-      <main className="min-h-screen">
+      <main className="min-h-screen w-full">
         <Hero />
         <FeaturedCoffees />
         <AboutSection />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
