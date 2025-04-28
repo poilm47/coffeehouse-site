@@ -1,11 +1,9 @@
 
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import { Coffee, ExternalLink, ThumbsUp, Sparkles, Globe, Clock } from "lucide-react";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 interface CoffeeFact {
@@ -227,17 +225,19 @@ const CoffeeFacts = () => {
       />
       <main className="container mx-auto px-4 py-16 mb-16 mt-10">
         <div className="flex flex-col items-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-center"
+          <div 
+            className="text-center transition-all duration-700 opacity-100 translate-y-0"
+            style={{opacity: 0, transform: 'translateY(-20px)'}}
+            onAnimationEnd={(e) => {
+              e.currentTarget.style.opacity = '1';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Интересные факты о кофе</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Откройте для себя мир кофе через удивительные факты, истории и традиции. От открытия кофейных зерен до современной кофейной культуры.
             </p>
-          </motion.div>
+          </div>
           
           <div className="flex gap-4 mt-6">
             <Button 
@@ -254,16 +254,13 @@ const CoffeeFacts = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {facts.map((fact, index) => (
-            <motion.div
+            <div
               key={fact.id}
-              className={`coffee-fact-card ${fact.color} rounded-lg p-6 border-2 transition-transform duration-300 hover:shadow-lg relative`}
+              className={`coffee-fact-card ${fact.color} rounded-lg p-6 border-2 transition-all duration-500 hover:shadow-lg relative opacity-0 translate-y-5`}
               data-id={fact.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={visibleFacts.includes(fact.id) ? { opacity: 1, y: 0 } : {}}
-              transition={{ 
-                duration: 0.5, 
-                delay: 0.1 * (index % 3),
-                ease: "easeOut"
+              style={{
+                transitionDelay: `${0.1 * (index % 3)}s`,
+                animation: visibleFacts.includes(fact.id) ? 'fadeIn 0.5s ease-out forwards' : 'none'
               }}
             >
               <div className="float-right">{fact.icon}</div>
@@ -279,23 +276,20 @@ const CoffeeFacts = () => {
                 <ThumbsUp className={`h-4 w-4 mr-1 ${fact.liked ? 'fill-red-500' : ''}`} />
                 {fact.liked ? 'Понравилось' : 'Нравится'}
               </Button>
-            </motion.div>
+            </div>
           ))}
         </div>
         
         <div className="mt-16 text-center">
           <h2 className="text-2xl font-bold mb-6">Хотите узнать больше о кофе?</h2>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-block"
+          <div
+            className="inline-block transition-all duration-500 hover:scale-105"
           >
             <Button className="group">
               <span>Узнать больше</span>
               <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
-          </motion.div>
+          </div>
         </div>
         
         <div className="mt-16 bg-muted p-6 rounded-lg">
@@ -311,6 +305,24 @@ const CoffeeFacts = () => {
         </div>
       </main>
       <Footer />
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .coffee-fact-card {
+          animation: fadeIn 0.5s ease-out forwards;
+          animation-play-state: paused;
+        }
+      `}</style>
     </>
   );
 };
