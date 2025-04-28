@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Coffee, Home, BookOpen, ChevronDown, Menu, X, Video, GamepadIcon, UtensilsCrossed, Cookie } from "lucide-react";
+import { Coffee, Home, BookOpen, ChevronDown, Menu, X, Video, GamepadIcon, UtensilsCrossed, Cookie, InfoIcon } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -30,6 +30,7 @@ const NavBar = () => {
           <NavLink to="/video-tutorials" icon={<Video className="h-4 w-4" />} label="Видеоуроки" />
           <NavLink to="/menu" icon={<UtensilsCrossed className="h-4 w-4" />} label="Напитки" />
           <NavLink to="/waffles" icon={<Cookie className="h-4 w-4" />} label="Вафли" />
+          <NavLink to="/coffee-facts" icon={<InfoIcon className="h-4 w-4" />} label="Факты о кофе" />
           <NavLink to="/coffee-game" icon={<GamepadIcon className="h-4 w-4" />} label="Мини-игра" />
           <div className="relative group">
             <button className="flex items-center space-x-1 text-sm font-medium hover:text-primary transition-colors">
@@ -64,6 +65,7 @@ const NavBar = () => {
           <MobileNavLink to="/video-tutorials" label="Видеоуроки" />
           <MobileNavLink to="/menu" label="Напитки" />
           <MobileNavLink to="/waffles" label="Вафли" />
+          <MobileNavLink to="/coffee-facts" label="Факты о кофе" />
           <MobileNavLink to="/coffee-game" label="Мини-игра" />
           <MobileNavLink to="/articles/brewing" label="Способы заваривания" />
           <MobileNavLink to="/articles/beans" label="Виды кофейных зерен" />
