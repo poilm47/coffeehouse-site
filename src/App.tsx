@@ -14,6 +14,7 @@ import Menu from "./pages/Menu";
 import Waffles from "./pages/Waffles";
 import CoffeeFacts from "./pages/CoffeeFacts";
 import Support from "./pages/Support";
+import FortuneWheel from "./pages/FortuneWheel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => {
               <Route path="/waffles" element={<Waffles />} />
               <Route path="/coffee-facts" element={<CoffeeFacts />} />
               <Route path="/support" element={<Support />} />
+              <Route path="/fortune-wheel" element={<FortuneWheel />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

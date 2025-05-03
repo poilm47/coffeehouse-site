@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Coffee, Home, BookOpen, ChevronDown, Menu, X, Video, GamepadIcon, UtensilsCrossed, Cookie, InfoIcon, HeadphonesIcon } from "lucide-react";
+import { Coffee, Home, BookOpen, ChevronDown, Menu, X, Video, GamepadIcon, UtensilsCrossed, Cookie, InfoIcon, HeadphonesIcon, Gift } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -32,6 +32,7 @@ const NavBar = () => {
           <NavLink to="/waffles" icon={<Cookie className="h-4 w-4" />} label="Вафли" />
           <NavLink to="/coffee-facts" icon={<InfoIcon className="h-4 w-4" />} label="Факты о кофе" />
           <NavLink to="/coffee-game" icon={<GamepadIcon className="h-4 w-4" />} label="Мини-игра" />
+          <NavLink to="/fortune-wheel" icon={<Gift className="h-4 w-4" />} label="Колесо Фортуны" />
           <NavLink to="/support" icon={<HeadphonesIcon className="h-4 w-4" />} label="Поддержка" />
           <div className="relative group">
             <button className="flex items-center space-x-1 text-sm font-medium hover:text-primary transition-colors">
@@ -40,7 +41,6 @@ const NavBar = () => {
             </button>
             <div className="absolute left-0 mt-2 w-48 origin-top-left rounded-md bg-card shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
               <div className="py-1 px-2">
-                {/* Убраны ссылки на несуществующие страницы */}
                 <Link to="/coffee-guide" className="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground rounded-md">
                   Способы заваривания
                 </Link>
@@ -69,6 +69,7 @@ const NavBar = () => {
           <MobileNavLink to="/waffles" label="Вафли" />
           <MobileNavLink to="/coffee-facts" label="Факты о кофе" />
           <MobileNavLink to="/coffee-game" label="Мини-игра" />
+          <MobileNavLink to="/fortune-wheel" label="Колесо Фортуны" />
           <MobileNavLink to="/support" label="Поддержка" />
           <MobileNavLink to="/coffee-guide" label="Способы заваривания" />
           <MobileNavLink to="/coffee-guide" label="Виды кофейных зерен" />
