@@ -13,7 +13,6 @@ import CoffeeGame from "./pages/CoffeeGame";
 import Menu from "./pages/Menu";
 import Waffles from "./pages/Waffles";
 import CoffeeFacts from "./pages/CoffeeFacts";
-import BrewingMethods from "./pages/BrewingMethods";
 import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 
@@ -41,7 +40,6 @@ const App = () => {
               <Route path="/waffles" element={<Waffles />} />
               <Route path="/coffee-facts" element={<CoffeeFacts />} />
               <Route path="/support" element={<Support />} />
-              <Route path="/articles/brewing" element={<BrewingMethods />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

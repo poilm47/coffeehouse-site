@@ -40,13 +40,14 @@ const NavBar = () => {
             </button>
             <div className="absolute left-0 mt-2 w-48 origin-top-left rounded-md bg-card shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
               <div className="py-1 px-2">
-                <Link to="/articles/brewing" className="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground rounded-md">
+                {/* Убраны ссылки на несуществующие страницы */}
+                <Link to="/coffee-guide" className="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground rounded-md">
                   Способы заваривания
                 </Link>
-                <Link to="/articles/beans" className="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground rounded-md">
+                <Link to="/coffee-guide" className="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground rounded-md">
                   Виды кофейных зерен
                 </Link>
-                <Link to="/articles/recipes" className="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground rounded-md">
+                <Link to="/coffee-guide" className="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground rounded-md">
                   Рецепты кофейных напитков
                 </Link>
               </div>
@@ -69,9 +70,9 @@ const NavBar = () => {
           <MobileNavLink to="/coffee-facts" label="Факты о кофе" />
           <MobileNavLink to="/coffee-game" label="Мини-игра" />
           <MobileNavLink to="/support" label="Поддержка" />
-          <MobileNavLink to="/articles/brewing" label="Способы заваривания" />
-          <MobileNavLink to="/articles/beans" label="Виды кофейных зерен" />
-          <MobileNavLink to="/articles/recipes" label="Рецепты кофейных напитков" />
+          <MobileNavLink to="/coffee-guide" label="Способы заваривания" />
+          <MobileNavLink to="/coffee-guide" label="Виды кофейных зерен" />
+          <MobileNavLink to="/coffee-guide" label="Рецепты кофейных напитков" />
         </nav>
       </div>
     </header>
